@@ -7,45 +7,166 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es" data-theme=''>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Jorge E description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<script>
+			const storageTheme = localStorage.getItem('theme');
+			const systemColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : '';
+			const newTheme = storageTheme ?? systemColorScheme;
+
+			document.documentElement.setAttribute('data-theme', newTheme);
+		</script>
+
 	</head>
 	<body>
-		<slot />
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+	*{
+		box-sizing: border-box;
+		text-decoration: none;
+		list-style: none;
+		/*transition: ease-in-out .2s;*/
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+
+
+	:root{
+		--bg-color: #d5d5f5;
+		--b-color: #282828;
+
+		--box-shadow: 10px 10px 20px rgba(202, 202, 233, 1),
+					  -10px -10px 20px rgba(224, 224, 255, 1);
+
+		--box-shadow-in: inset 10px 10px 20px rgba(202, 202, 233, 1),
+             			 inset -10px -10px 20px rgba(224, 224, 255, 1);
+		
+		--primary-shadow: 10px 10px 20px #00409f,
+             			  -10px -10px 20px #c9deeb;
+
+		--secondary-shadow: 10px 10px 20px #6d22a0,
+             				-10px -10px 20px #c9deeb;
+
+		--email-shadow: 10px 10px 20px #852020,
+             			-10px -10px 20px #c9deeb;
+
+		--whatsapp-shadow: 10px 10px 20px #009f25,
+						   -10px -10px 20px #c9deeb;
+
+		--toggle-shadow: 10px 10px 20px rgba(202, 202, 233, 1),
+             			-10px -10px 20px rgba(224, 224, 255, 1),
+                     	inset 10px 10px 20px rgba(202, 202, 233, 1),
+             			inset -10px -10px 20px rgba(224, 224, 255, 1);
+
+		--indicator-shadow: 0px 10px 20px rgb(155, 155, 173),
+             				-10px -10px 20px rgba(224, 224, 255, 1);
+
+		--font-size-title:2rem;
+		--font-size-title2:1.5rem;
+		--font-size-title3:1rem;
+		--font-size-title4:0.7rem;
+		
+		--title-color: #2b2b2b;
+		--title-color2: #3b3b3b;
+		--title-color3: #4b4b4b;
+
+		--primary-color: #2a65ef;
+		--secondary-color: #9830dd;
+		--text-hov-color: #e0e0e0;
+		--glass-color: rgba(255, 255, 255, 0.1);
+		--border-glass-color: rgba(255, 255, 255, 0.3);
+		--exp-color: rgba(40, 40, 40, 0.1);
+
+		--trans-ho:translate3d(-50%, 0, 0);
+		--trans-ve:translate3d(0, -60%, 0);
+
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	:root[data-theme='dark']{
+		--b-color: #d5d5f5;
+		--bg-color: #121929;
+
+		--box-shadow: 10px 10px 20px #0f1523,
+             			-10px -10px 20px #151d2f;
+
+		--box-shadow-in: inset 10px 10px 20px #0f1523,
+            			 inset -10px -10px 20px #151d2f;
+		
+		--primary-shadow: 10px 10px 20px #00409f,
+             			  -10px -10px 20px #151d2f;
+
+		--secondary-shadow: 10px 10px 20px #6d22a0,
+             				-10px -10px 20px #151d2f;
+
+		--email-shadow: 10px 10px 20px #852020,
+             			-10px -10px 20px #151d2f;
+
+		--whatsapp-shadow: 10px 10px 20px #009f25,
+						   -10px -10px 20px #151d2f;
+
+		--toggle-shadow: 10px 10px 20px rgb(15, 21, 35),
+             			 -10px -10px 20px rgb(21, 29, 47),
+                     	 inset 10px 10px 20px #0f1523,
+            			 inset -10px -10px 20px #151d2f;
+
+		--indicator-shadow: 10px 10px 20px rgb(15, 21, 35),
+             			 	-10px -10px 20px rgb(5, 6, 11);
+
+		--font-size-title:2rem;
+		--font-size-title2:1.5rem;
+		--font-size-title3:1rem;
+		--font-size-title4:0.7rem;
+		
+		--title-color: #dfdfdf;
+		--title-color2: #cfcfcf;
+		--title-color3: #bfbfbf;
+
+		--primary-color: #2a65ef;
+		--secondary-color: #9830dd;
+		--text-hov-color: #e0e0e0;
+		--glass-color: rgb(18, 25, 41, 0.2);
+		--border-glass-color: rgba(116, 116, 116, 0.3);
+		--exp-color: rgba(97, 97, 97, 0.1);
+
+		--trans-ho:translate3d(50%, 0, 0);
+		--trans-ve:translate3d(0, 60%, 0);
+
+	}
+
+
+	body{
+		background-color: var(--bg-color);
+	}
+	
+	.push{
+		box-shadow:  var(--box-shadow);
+	}
+	.nopush{
+		box-shadow:  var(--box-shadow-in);
+	}
+
+	@media (width > 500px){
+		:root{
+			--font-size-title:3rem;
+			--font-size-title2:2rem;
+			--font-size-title3:1.5rem;
+			--font-size-title4:1rem;
+		}
+		:root[data-theme='dark']{
+			--font-size-title:3rem;
+			--font-size-title2:2rem;
+			--font-size-title3:1.5rem;
+			--font-size-title4:1rem;
+		}
 	}
 </style>
