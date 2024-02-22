@@ -1,0 +1,166 @@
+---
+
+---
+<div class="container">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<style>
+    .container{
+        width: 90%;
+        height: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        overflow: hidden;
+    }
+    .container div{
+        width: 10px;
+        animation: animate 5s infinite; 
+    }
+    .container div:nth-child(1){
+        height: 50px;
+        background: rgb(56, 150, 222);
+    }
+    .container div:nth-child(2){
+        height: 70px;
+        background: rgb(51, 150, 199);
+    }
+    .container div:nth-child(3){
+        height: 100px;
+        background: rgb(92, 145, 252);
+    }
+    .container div:nth-child(4){
+        height: 80px;
+        background: rgb(51, 150, 199);
+    }
+    .container div:nth-child(5){
+        height: 150px;
+        background: rgb(80, 130, 231);
+    }
+    .container div:nth-child(6){
+        height: 200px;
+        background: rgb(89, 102, 245);
+    }
+    .container div:nth-child(7){
+        height: 170px;
+        background: rgb(92, 145, 252);
+    }
+    .container div:nth-child(8){
+        height: 210px;
+        background: rgb(76, 88, 218);
+    }
+    .container div:nth-child(9){
+        height: 230px;
+        background: rgb(66, 55, 227);
+    }
+    .container div:nth-child(10){
+        height: 250px;
+        background: rgb(143, 116, 241);
+    }
+
+    
+    @keyframes animate{
+        0%{
+        transform:translateY(100%);
+        }
+        90%{
+            transform:translateY(0%);
+        }
+        100%{
+        transform:translateY(100%);
+        }
+
+    }
+    
+
+    @media (width > 500px) {
+        .container div{
+            width: 35px;
+        }
+        .container div:nth-child(1){
+            height: 25px;
+        }
+        .container div:nth-child(2){
+            height: 35px;
+        }
+        .container div:nth-child(3){
+            height: 90px;
+        }
+        .container div:nth-child(4){
+            height: 70px;
+        }
+        .container div:nth-child(5){
+            height: 120px;
+        }
+        .container div:nth-child(6){
+            height: 160px;
+        }
+        .container div:nth-child(7){
+            height: 150px;
+        }
+        .container div:nth-child(8){
+            height: 180px;
+        }
+        .container div:nth-child(9){
+            height: 190px;
+        }
+        .container div:nth-child(10){
+            height: 200px;
+        }
+    }
+        
+        
+    @media (width > 1000px) {
+            .container div:nth-child(1){
+            width: 50px;
+            height: 50px;
+        }
+        .container div:nth-child(2){
+            width: 50px;
+            height: 70px;
+        }
+        .container div:nth-child(3){
+            width: 50px;
+            height: 100px;
+        }
+        .container div:nth-child(4){
+            width: 50px;
+            height: 80px;
+        }
+        .container div:nth-child(5){
+            width: 50px;
+            height: 150px;
+        }
+        .container div:nth-child(6){
+            width: 50px;
+            height: 190px;
+        }
+        .container div:nth-child(7){
+            width: 50px;
+            height: 170px;
+        }
+        .container div:nth-child(8){
+            width: 50px;
+            height: 215px;
+        }
+        .container div:nth-child(9){
+            width: 50px;
+            height: 230px;
+        }
+        .container div:nth-child(10){
+            width: 50px;
+            height: 270px;
+        }
+    }
+
+</style>
