@@ -1,10 +1,30 @@
 ---
-
+const {title, image, tecno, resume, linkButton} = Astro.props;
 ---
 
-<article>
-    <div class="title"><h2></h2></div>
-    <div class="image"><img src="" alt=""></div>
-    <div class="tecno"><h3></h3></div>
-    <div class="resume"><p></p></div>
+<article class="card">
+    <div class="title"><h2>{title}</h2></div>
+    <div class="image"><img src={image} alt="aqui va la imagen"></div>
+    <div class="tecno"><h3>{tecno}</h3></div>
+    <div class="resume"><p>{resume}</p></div>
+    <div class="linkButton"><a href={linkButton}>Git Hub</a></div>
 </article>
+
+<style>
+    
+    .card{
+        width: 95%;
+        height: 93%;
+        border-radius: 20px;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    }
+
+
+    @media (width > 500px){
+
+    }
+
+    @media (width > 800px){
+
+    }
+</style>

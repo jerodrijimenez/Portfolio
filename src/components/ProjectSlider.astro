@@ -1,14 +1,14 @@
 ---
-
+import ProjectCard from '../components/ProjectCard.astro'
 ---
 
 
-<swiper-container class="mySwiper" autoplay="true" grab-cursor="true" pagination="true">
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 4</swiper-slide>
-    <swiper-slide>Slide 5</swiper-slide>
+<swiper-container class="mySwiper" autoplay="true" grab-cursor="true" pagination="true" pagination-clickable="true" centered-slides="true" loop="true" space-between="30">
+    <swiper-slide><ProjectCard title="Proyecto 1" image="/" tecno="Arduino, C#" resume="Aqui va la descripción del proyecto" linkButton="/"/></swiper-slide>
+    <swiper-slide><ProjectCard title="Proyecto 2" image="/" tecno="PostgreSql" resume="Aqui va la descripción del proyecto" linkButton="/"/></swiper-slide>
+    <swiper-slide><ProjectCard title="Proyecto 3" image="/" tecno="Java, JasperReports" resume="Aqui va la descripción del proyecto" linkButton="/"/></swiper-slide>
+    <swiper-slide><ProjectCard title="Proyecto 4" image="/" tecno="C#, Entity, LinQ, SqlServer" resume="Aqui va la descripción del proyecto" linkButton="/"/></swiper-slide>
+    <swiper-slide><ProjectCard title="Proyecto 5" image="/" tecno="C#, Roslyn, Reflection" resume="Aqui va la descripción del proyecto" linkButton="/"/></swiper-slide>
   </swiper-container>
 
   <style>
@@ -18,21 +18,26 @@
         width: 100%;
         height: 100%;
         position: relative;
-        
+        padding: 2%;
+        border-radius: 20px;
     }
 
     swiper-slide {
-        text-align: center;
+      text-align: center;
       font-size: 18px;
       background: var(--bg-color);
       display: flex;
       justify-content: center;
-      align-items: center;
-      border: solid 1px red;
+      align-items: top;
       border-radius: 20px;
-      /*max-width: 500px;*/
     }
+    
 
+    @media (width < 800px){
+        swiper-slide{
+          min-height: 550px;
+        }
+      }
 
     
   </style>
