@@ -1,14 +1,14 @@
 ---
-const {title, image, tecno, resume, linkButton} = Astro.props;
+const {title, image, tecno, resume, git} = Astro.props;
 ---
 
 <article class="card">
-    <div class="image"><img src={image} alt={title}></div>
-    <div class="title"><h2>{title}</h2></div>
-    <div class="tecno"><h3>{tecno}</h3></div>
-    <div class="resume"><p>{resume}</p></div>
-    <div class="linkButton"><a href={linkButton}><i class="fab fa-github"></i></a></div>
-    
+        <div class="image"><img src={image} alt={title}></div>
+        <div class="title"><h2>{title}</h2></div>
+        <div class="tecno"><h3>{tecno}</h3></div>
+        <div class="resume"><p>{resume}</p></div>
+        <div class="git"><a href={git}><i class="fab fa-github"></i></a></div>
+        <div class="pop"><a href="/"><i class="far fa-question-circle"></i></a></div>   
 </article>
 
 <style>
@@ -17,28 +17,37 @@ const {title, image, tecno, resume, linkButton} = Astro.props;
         margin: 0;
     }
     .card{
-        width: 90%;
-        height: 93%;
-        border-radius: 20px;
-        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
-        display: block;
-        padding: 20px;
-        padding-left: 150px;
+        display: grid;
         justify-content: center;
         align-items: center;
+        width: 95%;
+        height: 100%;
+        padding: 2%;
+        border-radius: 20px;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
         background-color: var(--bg-color);
+        border: solid 2px yellowgreen;
+        grid-template-areas:
+        "image image"
+        "title title"
+        "tecno tecno"
+        "resume resume"
+        "resume resume"
+        "resume resume"
+        "github pop";
     }
 
+
     .card .image{
-        position: absolute;
-        background-color: var(--primary-color);
+        grid-area: image;
+        background-color: deeppink;
+        /*background-color: var(--primary-color);
         box-shadow: var(--primary-shadow);
-        width: 200px;
-        height: 200px;
-        left: 10px;
-        top: 100px;
+        width: 150px;
+        height: 150px;*/
+        width: 100%;
+        height: 100%;
         border-radius: 15px;
-        display: flex;
         justify-content: center;
         align-items: center;
     }
@@ -49,41 +58,84 @@ const {title, image, tecno, resume, linkButton} = Astro.props;
         border-radius: 15px;
     }
 
+    
+
     .card .title{
-        position: relative;
-        align-items: center;
-        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: aqua;
+        grid-area: title;
         font-size: var(--font-size-title3);
         color: var(--primary-color);
     }
     .card .tecno{
-        display: flex;
-        justify-content: end;
+        width: 100%;
+        height: 100%;
+        background-color: blueviolet;
+        grid-area: tecno;
         font-size: var(--font-size-title4);
         color: var(--title-color); 
     }
 
     .card .resume{
-        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: burlywood;
+        grid-area: resume;
         font-size: var(--font-size-title4);
         color: var(--title-color2); 
-        text-align: left;
     }
 
-    .card .linkButton{
-        position: relative;
-        align-items: center;
-        justify-content: center;
+    .card .git{
+        width: 100%;
+        height: 100%;
+        background-color: chartreuse;
+        grid-area: github;
         background-color: red;
-        width: 200px;
-        height: 50px;
+        font-size: var(--font-size-title3);
     }
+
+    .card .pop{
+        width: 100%;
+        height: 100%;
+        background-color: darkred;
+        grid-area: pop;
+        background-color: blue;
+        font-size: var(--font-size-title3);
+    }
+
+    /*-------------------Responsive------------------*/
 
     @media (width > 500px){
+
+        .card{
+            height: 93%;
+            grid-template-areas:
+            "image image title title"
+            "image image tecno tecno"
+            "resume resume resume resume"
+            "resume resume resume resume"
+            "github github pop pop";
+        }
+        
+        
 
     }
 
     @media (width > 800px){
 
+        .card{
+            grid-template-areas:
+            "image title title"
+            "image tecno tecno"
+            "image resume resume"
+            "image resume resume"
+            "image github pop";
+        }
+        .card .image{
+            width: 200px;
+            height: 200px;
+        }
     }
+
 </style>
