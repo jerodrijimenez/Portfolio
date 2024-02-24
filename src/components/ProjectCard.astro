@@ -3,7 +3,7 @@ const {title, image, tecno, resume, linkButton} = Astro.props;
 ---
 
 <article class="card">
-    <div class="image"><img src={image} alt="aqui va la imagen"></div>
+    <div class="image"><img src={image} alt={title}></div>
     <div class="title"><h2>{title}</h2></div>
     <div class="tecno"><h3>{tecno}</h3></div>
     <div class="resume"><p>{resume}</p></div>
@@ -12,6 +12,10 @@ const {title, image, tecno, resume, linkButton} = Astro.props;
 </article>
 
 <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
     .card{
         width: 90%;
         height: 93%;
@@ -20,21 +24,60 @@ const {title, image, tecno, resume, linkButton} = Astro.props;
         display: block;
         padding: 20px;
         padding-left: 150px;
+        justify-content: center;
+        align-items: center;
         background-color: var(--bg-color);
-        /*border: solid 2px var(--primary-color);*/
     }
 
     .card .image{
         position: absolute;
-        background-color: var(--bg-color);
+        background-color: var(--primary-color);
         box-shadow: var(--primary-shadow);
         width: 200px;
         height: 200px;
         left: 10px;
         top: 100px;
         border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
+    .card .image img{
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+    }
+
+    .card .title{
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--font-size-title3);
+        color: var(--primary-color);
+    }
+    .card .tecno{
+        display: flex;
+        justify-content: end;
+        font-size: var(--font-size-title4);
+        color: var(--title-color); 
+    }
+
+    .card .resume{
+        position: relative;
+        font-size: var(--font-size-title4);
+        color: var(--title-color2); 
+        text-align: left;
+    }
+
+    .card .linkButton{
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        background-color: red;
+        width: 200px;
+        height: 50px;
+    }
 
     @media (width > 500px){
 
