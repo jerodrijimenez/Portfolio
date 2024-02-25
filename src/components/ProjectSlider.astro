@@ -34,12 +34,18 @@ import ProjectCard from '../components/ProjectCard.astro'
     }
     
 
-    @media (width < 800px){
-        swiper-slide{
-          min-height: 500px;
-          max-height: 550px;
-        }
+    @media (width < 500px){
+
+      swiper-container {
+        min-height: 600px;
+        max-height: 650px;
       }
+      swiper-slide{
+         min-height: 500px;
+        max-height: 550px;
+      }
+
+    }
 
     
   </style>

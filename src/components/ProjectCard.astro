@@ -26,52 +26,45 @@ const {title, image, tecno, resume, git} = Astro.props;
         border-radius: 20px;
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
         background-color: var(--bg-color);
-        border: solid 2px yellowgreen;
         grid-template-areas:
+        "image image"
         "image image"
         "title title"
         "tecno tecno"
         "resume resume"
         "resume resume"
         "resume resume"
+        "resume resume"
+        "github pop"
         "github pop";
     }
 
 
     .card .image{
         grid-area: image;
-        background-color: deeppink;
-        /*background-color: var(--primary-color);
-        box-shadow: var(--primary-shadow);
-        width: 150px;
-        height: 150px;*/
-        width: 100%;
-        height: 100%;
         border-radius: 15px;
         justify-content: center;
         align-items: center;
     }
 
     .card .image img{
-        width: 100%;
-        height: 100%;
+        box-shadow: 3px 3px 5px #00409f,
+             		-3px -3px 5px #c9deeb;;
+        min-width: 100px;
+        min-height: 100px;
+        width: 150px;
+        height: 150px;
         border-radius: 15px;
     }
 
     
 
     .card .title{
-        width: 100%;
-        height: 100%;
-        background-color: aqua;
         grid-area: title;
         font-size: var(--font-size-title3);
         color: var(--primary-color);
     }
     .card .tecno{
-        width: 100%;
-        height: 100%;
-        background-color: blueviolet;
         grid-area: tecno;
         font-size: var(--font-size-title4);
         color: var(--title-color); 
@@ -80,16 +73,16 @@ const {title, image, tecno, resume, git} = Astro.props;
     .card .resume{
         width: 100%;
         height: 100%;
-        background-color: burlywood;
         grid-area: resume;
         font-size: var(--font-size-title4);
         color: var(--title-color2); 
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .card .git{
         width: 100%;
         height: 100%;
-        background-color: chartreuse;
         grid-area: github;
         background-color: red;
         font-size: var(--font-size-title3);
@@ -98,7 +91,6 @@ const {title, image, tecno, resume, git} = Astro.props;
     .card .pop{
         width: 100%;
         height: 100%;
-        background-color: darkred;
         grid-area: pop;
         background-color: blue;
         font-size: var(--font-size-title3);
@@ -111,8 +103,8 @@ const {title, image, tecno, resume, git} = Astro.props;
         .card{
             height: 93%;
             grid-template-areas:
-            "image image title title"
-            "image image tecno tecno"
+            "image title title title"
+            "image tecno tecno tecno"
             "resume resume resume resume"
             "resume resume resume resume"
             "github github pop pop";
@@ -132,9 +124,11 @@ const {title, image, tecno, resume, git} = Astro.props;
             "image resume resume"
             "image github pop";
         }
-        .card .image{
+        .card .image img{
             width: 200px;
             height: 200px;
+            min-width: 200px;
+            min-height: 200px;
         }
     }
 
