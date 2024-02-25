@@ -1,5 +1,5 @@
 ---
-const {title, image, tecno, resume, git} = Astro.props;
+const {title, image, tecno, resume, git, pop} = Astro.props;
 ---
 
 <article class="card">
@@ -7,8 +7,11 @@ const {title, image, tecno, resume, git} = Astro.props;
         <div class="title"><h2>{title}</h2></div>
         <div class="tecno"><h3>{tecno}</h3></div>
         <div class="resume"><p>{resume}</p></div>
-        <div class="git"><a href={git}><i class="fab fa-github"></i></a></div>
-        <div class="pop"><a href="/"><i class="far fa-question-circle"></i></a></div>   
+        <div class="links">
+            <div class="pop"><a href={pop}><i class="far fa-question-circle"></i></a></div>
+            <div class="git"><a href={git}><i class="fab fa-github"></i></a></div>
+        </div>
+           
 </article>
 
 <style>
@@ -24,7 +27,7 @@ const {title, image, tecno, resume, git} = Astro.props;
         height: 100%;
         padding: 2%;
         border-radius: 20px;
-        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+        box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
         background-color: var(--bg-color);
         grid-template-areas:
         "image image"
@@ -35,8 +38,8 @@ const {title, image, tecno, resume, git} = Astro.props;
         "resume resume"
         "resume resume"
         "resume resume"
-        "github pop"
-        "github pop";
+        "links links"
+        "links links";
     }
 
 
@@ -52,8 +55,8 @@ const {title, image, tecno, resume, git} = Astro.props;
              		-3px -3px 5px #c9deeb;;
         min-width: 100px;
         min-height: 100px;
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
         border-radius: 15px;
     }
 
@@ -63,37 +66,94 @@ const {title, image, tecno, resume, git} = Astro.props;
         grid-area: title;
         font-size: var(--font-size-title3);
         color: var(--primary-color);
+        padding-left: 5%;
+        padding-right: 5%;
+        text-align: center;
     }
     .card .tecno{
         grid-area: tecno;
-        font-size: var(--font-size-title4);
+        font-size: var(--font-size-title3);
         color: var(--title-color); 
+        padding-left: 5%;
+        padding-right: 5%;
+        text-align: left;
     }
 
     .card .resume{
         width: 100%;
         height: 100%;
         grid-area: resume;
-        font-size: var(--font-size-title4);
+        font-size: var(--font-size-title5);
         color: var(--title-color2); 
-        padding-left: 5%;
+        text-align: justify;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+
+    .card .resume p{
+        min-height: 200px;
+        padding: 2%;
+        border-radius: 10px;
+        border: solid 2px var(--primary-color);
+    }
+
+    .card .links{
+        height: 100%;
+        grid-area: links;
+        display: flex;
         padding-right: 5%;
+        padding-left: 5%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 5%;
+    }
+    .card .links .git{
+        width: 50px;
     }
 
-    .card .git{
+    .card .links .git a{
         width: 100%;
-        height: 100%;
-        grid-area: github;
-        background-color: red;
-        font-size: var(--font-size-title3);
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		text-decoration: none;
+		list-style: none;
+        border-radius: 10px;
+    }
+    .card .links .git a i{
+        color: var(--secondary-color);
+		font-size: 2em;
+		transition: ease-in-out .2s;
     }
 
-    .card .pop{
+    .card .links .git a:hover i{
+        color: var(--secondary-color);
+    }
+
+    .card .links .pop{
+        width: 50px;
+    }
+
+    .card .links .pop a{
         width: 100%;
-        height: 100%;
-        grid-area: pop;
-        background-color: blue;
-        font-size: var(--font-size-title3);
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		text-decoration: none;
+		list-style: none;
+        border-radius: 10px;
+    }
+
+    .card .links .pop a i{
+        color: #fa632c;
+		font-size: 2em;
+		transition: ease-in-out .2s;
+    }
+
+    .card .links .pop a:hover i{
+        color: #fa632c;
     }
 
     /*-------------------Responsive------------------*/
@@ -107,11 +167,17 @@ const {title, image, tecno, resume, git} = Astro.props;
             "image tecno tecno tecno"
             "resume resume resume resume"
             "resume resume resume resume"
-            "github github pop pop";
+            "resume resume resume resume"
+            "links links links links";
+        }
+
+        .card .title{
+            text-align: left;
+        }
+        .card .links{
+            justify-content: right;
         }
         
-        
-
     }
 
     @media (width > 800px){
@@ -122,13 +188,25 @@ const {title, image, tecno, resume, git} = Astro.props;
             "image tecno tecno"
             "image resume resume"
             "image resume resume"
-            "image github pop";
+            "image links links";
         }
         .card .image img{
             width: 200px;
             height: 200px;
             min-width: 200px;
             min-height: 200px;
+        }
+
+        .card .resume{
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .card .links .pop a i{
+        color: var(--links-color);
+        }
+        .card .links .git a i{
+        color: var(--links-color);
         }
     }
 

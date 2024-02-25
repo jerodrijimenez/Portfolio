@@ -181,7 +181,7 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 .structure .projects{
 	grid-area: projects;
 	display: block;
-	padding: 1%;
+	padding-top: 1%;
 	transition: ease-in-out .3s;
 }
 	
@@ -220,6 +220,7 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 		color: #ffffff;
 		font-size: 4em;
 		transition: ease-in-out .2s;
+		transform: scale(1.2);
 	}
 	.structure .whatsapp:hover{
 		background:#00bb2d;
@@ -250,6 +251,7 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 		color: #ffffff ;
 		font-size: 4em;
 		transition: ease-in-out .2s;
+		transform: scale(1.2);
 	}
 	.structure .email:hover{
 		background:#d23434;
@@ -263,7 +265,10 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 /*-------------------------------------------------------*/
 .structure .blog{
 	grid-area: blog;
+	background-color: var(--secondary-color);
+	box-shadow: var(--secondary-shadow);
 	transition: ease-in-out .3s;
+	
 }
 
 	.structure .blog a{
@@ -275,8 +280,9 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 	}
 	.structure .blog a span{
 		font-size: var(--font-size-title);
-		color: var(--title-color3);
+		color: #ffffff;
 		transition: ease-in-out .2s;
+		transform: scale(1.2);
 	}
 	.structure .blog:hover{
 		background-color: var(--secondary-color);
@@ -284,7 +290,7 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 	}
 	.structure .blog:hover a span{
 		transform: scale(1.2);
-		color: var(--text-hov-color);
+		color: #ffffff;
 	}
 
 
@@ -383,6 +389,7 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 		}
 		.structure .whatsapp a i{
 		 color:#00bb2d;
+		 transform: scale(1);
 		}
 
 		.structure .email{
@@ -391,6 +398,17 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 		}
 		.structure .email a i{
 		 color:#d23434;
+		 transform: scale(1);
+		}
+
+		.structure .blog{
+			background-color: var(--bg-color);
+			box-shadow: var(--box-shadow);
+		}
+
+		.structure .blog a span{
+			color: var(--title-color3);
+			transform: scale(1);
 		}
 	}
 
