@@ -89,6 +89,10 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+		animation-name: Entrance-animation;
+		animation-duration: 1s;
+		animation-timing-function: cubic-bezier(.85, .05, .18, 1.35);
 	}
 	.structure .about .cont{
 		position: relative;
@@ -147,6 +151,10 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 		background-size: contain;
 		justify-content: center;
 		align-items: end;
+
+		animation-name: Entrance-animation;
+		animation-duration: 1.5s;
+		animation-timing-function: cubic-bezier(.85, .05, .18, 1.35);
 	}
 	.structure .image .imgglass{
 		width: 100%;
@@ -172,6 +180,11 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 		display: block;
 		padding-top: 1%;
 		transition: ease-in-out .3s;
+
+
+		animation-name: Entrance-animation;
+		animation-duration: 1.7s;
+		animation-timing-function: cubic-bezier(.85, .05, .18, 1.35);
 	}
 	
 /*-------------------------------------------------------*/
@@ -184,6 +197,10 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 		gap: 5%;
 		padding: 3%;
 		transition: ease-in-out .3s;
+
+		animation-name: Entrance-animation;
+		animation-duration: 1.2s;
+		animation-timing-function: cubic-bezier(.85, .05, .18, 1.35);
 	}
 
 /*-------------------------------------------------------*/
@@ -191,6 +208,10 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 		grid-area: whatsapp;
 		background:#00bb2d;
 		transition: ease-in-out .3s;
+
+		animation-name: Entrance-animation;
+		animation-duration: 1.9s;
+		animation-timing-function: cubic-bezier(.85, .05, .18, 1.35);
 	}
 	.structure .whatsapp a{
 		width: 100%;
@@ -220,6 +241,10 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 		grid-area: email;
 		background:#d23434;
 		transition: ease-in-out .3s;
+
+		animation-name: Entrance-animation;
+		animation-duration: 2.2s;
+		animation-timing-function: cubic-bezier(.85, .05, .18, 1.35);
 	}
 	.structure .email a{
 		width: 100%;
@@ -249,6 +274,10 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 		grid-area: blog;
 		background-color: #2c7dba;
 		transition: ease-in-out .3s;
+
+		animation-name: Entrance-animation;
+		animation-duration: 1.4s;
+		animation-timing-function: cubic-bezier(.85, .05, .18, 1.35);
 	}
 	.structure .blog a{
 		width: 100%;
@@ -278,6 +307,10 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+		animation-name: Entrance-animation;
+		animation-duration: 2.5s;
+		animation-timing-function: cubic-bezier(.85, .05, .18, 1.35);
 	}
 	.structure .slogan h2{
 		font-size: var(--font-size-title);
@@ -401,7 +434,23 @@ import ProjectSlider from '../components/ProjectSlider.astro';
 			display: flex;
 		}
 	}
-	
+
+
+
+	/*--------------------------------Animation------------------------*/
+	@keyframes Entrance-animation {
+		0% {
+			
+			transform: translateY(300px);
+			opacity: 0;
+		}
+		100% {
+			
+			transform: translateY(0px);
+			opacity: 1;
+		}
+	}
+
 </style>
 
 
