@@ -1,5 +1,5 @@
 import { renderers } from './renderers.mjs';
-import { l as levels, g as getEventPrefix, L as Logger, A as AstroIntegrationLogger, manifest } from './manifest_D1N5l1YO.mjs';
+import { l as levels, g as getEventPrefix, L as Logger, A as AstroIntegrationLogger, manifest } from './manifest_BlXzvF3j.mjs';
 import { A as AstroError, R as ResponseSentError, G as GetStaticPathsRequired, n as InvalidGetStaticPathsReturn, o as InvalidGetStaticPathsEntry, p as GetStaticPathsExpectedParams, q as GetStaticPathsInvalidRouteParam, P as PageNumberParamNotFound, t as ROUTE_TYPE_HEADER, u as MiddlewareNoDataOrNextCalled, v as MiddlewareNotAResponse, N as NoMatchingStaticPathFound, w as PrerenderDynamicEndpointPathCollide, x as ReservedSlotName, y as renderSlotToString, z as renderJSX, B as chunkToString, C as clientAddressSymbol$1, D as ClientAddressNotAvailable, S as StaticClientAddressNotAvailable, H as responseSentSymbol$1, J as LocalsNotAnObject, K as clientLocalsSymbol, O as ASTRO_VERSION, Q as renderEndpoint, T as renderPage, V as REROUTABLE_STATUS_CODES, W as REROUTE_DIRECTIVE_HEADER, X as commonjsGlobal } from './chunks/astro_RIpVAP8I.mjs';
 import { j as joinPaths, s as slash$1, p as prependForwardSlash, t as trimSlashes, e as appendForwardSlash, r as removeTrailingForwardSlash, f as collapseDuplicateSlashes } from './chunks/astro/assets-service_CwQSY611.mjs';
 import require$$1 from 'os';
@@ -9015,7 +9015,7 @@ const createExports = (manifest, { middlewareSecret }) => {
 };
 
 const _page0 = () => import('./chunks/generic_CAJsLtIl.mjs');
-const _page1 = () => import('./chunks/index_DUU1HIR1.mjs');
+const _page1 = () => import('./chunks/index_DwspsJGS.mjs');
 const pageMap = new Map([
     ["node_modules/.pnpm/astro@4.4.2/node_modules/astro/dist/assets/endpoint/generic.js", _page0],
     ["src/pages/index.astro", _page1]
@@ -9027,7 +9027,7 @@ const _manifest = Object.assign(manifest, {
     middleware: onRequest
 });
 const _args = {
-    "middlewareSecret": "c95dda7c-9806-4a7c-abab-a3b7a4162d85"
+    "middlewareSecret": "22798563-8926-4d73-9802-b68471a0710d"
 };
 const _exports = createExports(_manifest, _args);
 const __astrojsSsrVirtualEntry = _exports.default;
